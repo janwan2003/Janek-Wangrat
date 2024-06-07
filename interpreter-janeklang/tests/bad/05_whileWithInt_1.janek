@@ -1,0 +1,6 @@
+int main(){
+    while(3){
+        420;
+    }
+    return 0;
+}

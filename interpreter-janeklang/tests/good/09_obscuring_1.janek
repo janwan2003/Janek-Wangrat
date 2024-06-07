@@ -1,0 +1,13 @@
+int x = 5;
+
+int main() {
+    int x = 10;
+    int pom(){
+        int x = 20;
+        print(x);
+        return 0;
+    }
+    pom();
+    print(x);
+    return 0;
+}

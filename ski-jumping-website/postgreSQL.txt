@@ -1,0 +1,141 @@
+CREATE TABLE Kraj(
+nazwa VARCHAR(128) PRIMARY KEY
+);
+DROP TABLE IF EXISTS Konkurs;
+CREATE TABLE Konkurs(
+id INTEGER PRIMARY KEY,
+nazwa VARCHAR(128) NOT NULL,
+organizator VARCHAR(128) NOT NULL references Kraj,
+data_konkursu DATE NOT NULL,
+termin_zgloszen DATE NOT NULL
+);
+CREATE TABLE Zawodnik(
+id INTEGER PRIMARY KEY,
+imie VARCHAR(128) NOT NULL,
+nazwisko VARCHAR(128) NOT NULL,
+kraj VARCHAR(128) NOT NULL REFERENCES Kraj
+);
+CREATE TABLE Zgloszenie(
+id INTEGER PRIMARY KEY,
+data_zgloszenia DATE NOT NULL ,
+id_zawodnika INTEGER NOT NULL REFERENCES Zawodnik,
+id_konkursu INTEGER NOT NULL REFERENCES Konkurs,
+constraint zawodnik_konkurs
+        unique (id_zawodnika, id_konkursu)
+);
+DROP TABLE IF EXISTS Skok;
+CREATE TABLE Skok(
+id INTEGER PRIMARY KEY,
+dlugosc INTEGER NOT NULL,
+ocena INTEGER NOT NULL,
+seria INTEGER NOT NULL,
+id_konkursu INTEGER NOT NULL,
+id_zawodnika INTEGER NOT NULL REFERENCES Zawodnik
+);
+
+CREATE TABLE Loginy( login VARCHAR(256) PRIMARY KEY , haslo VARCHAR(256) NOT NULL );
+
+CREATE TABLE Kwota
+(
+    id_konkursu integer not null,
+    kraj varchar(128) not null,
+    kwota_dodatkowa integer not null,
+    constraint kraj_konkurs
+        primary key (id_konkursu, kraj)
+);
+
+CREATE OR REPLACE FUNCTION sprawdz_czy_kwota_dodatnia() RETURNS TRIGGER AS $$
+BEGIN
+    IF new.kwota_dodatkowa < 0 THEN
+        RAISE EXCEPTION 'Niedodatnia kwota!';
+
+    ELSE RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+drop trigger if exists sprawdz_czy_kwota_dodatnia on kwota;
+
+CREATE TRIGGER sprawdz_czy_kwota_dodatnia
+BEFORE INSERT ON kwota
+FOR EACH ROW
+EXECUTE procedure sprawdz_czy_kwota_dodatnia();
+
+CREATE OR REPLACE FUNCTION sprawdz_zgloszenie() RETURNS TRIGGER AS $$
+DECLARE kwo integer;
+DECLARE kra text;
+DECLARE ileJest integer;
+BEGIN
+    kra = (select kraj from (select * from zawodnik where new.id_zawodnika = zawodnik.id) A join Kraj on kraj.nazwa = A.kraj);
+    kwo = (select A.kwota_dodatkowa from (select * from Kraj where Kraj.nazwa = kra) B join (select * from kwota where id_konkursu = new.id_konkursu) A on B.nazwa = A.kraj);
+    if kwo is null then kwo = 2; else kwo = kwo + 2; end if;
+    ileJest = (select ile from (select Kraj.nazwa, count(id_zawodnika) as ile from Kraj join (select * from Zgloszenie join Zawodnik on Zgloszenie.id_zawodnika
+    = Zawodnik.id where id_konkursu = NEW.id_konkursu and Zawodnik.kraj = kra) A on A.kraj = Kraj.nazwa group by Kraj.nazwa) B);
+    IF ileJest >= kwo THEN RAISE EXCEPTION 'Kwota osiągnięta!';
+    ELSE RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS sprawdz_zgloszenie ON zgloszenie;
+CREATE TRIGGER sprawdz_zgloszenie
+BEFORE INSERT ON zgloszenie
+FOR EACH ROW
+EXECUTE procedure sprawdz_zgloszenie();
+
+CREATE OR REPLACE FUNCTION sprawdz_termin() RETURNS TRIGGER AS $$
+DECLARE ter date;
+    BEGIN
+    ter = (select termin_zgloszen from Konkurs where id = new.id_konkursu);
+    IF new.data_zgloszenia > ter THEN
+        RAISE EXCEPTION 'Upłynął termin zgłoszeń!';
+    ELSE RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS sprawdz_czy_kwota_dodatnia ON zgloszenie;
+
+CREATE TRIGGER sprawdz_termin
+BEFORE INSERT ON zgloszenie
+FOR EACH ROW
+EXECUTE procedure sprawdz_termin();
+
+CREATE OR REPLACE FUNCTION sprawdz_termin_zgloszen() RETURNS TRIGGER AS $$
+    BEGIN
+    IF new.data_konkursu < new.termin_zgloszen THEN
+        RAISE EXCEPTION 'Termin po konkursie!';
+    ELSE RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS sprawdz_termin_zgloszen ON konkurs;
+
+CREATE TRIGGER sprawdz_termin_zgloszen
+BEFORE INSERT ON konkurs
+FOR EACH ROW
+EXECUTE procedure sprawdz_termin_zgloszen();
+
+CREATE OR REPLACE FUNCTION policz_zawodnikow(idkon integer) RETURNS integer
+    AS $$
+    BEGIN
+    return (select count(*) as ile from Zawodnik join Zgloszenie on Zawodnik.id = Zgloszenie.id_zawodnika where Zgloszenie.id_konkursu = idkon);
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION sprawdz_czy_ktos_skoczyl() RETURNS TRIGGER AS $$
+    BEGIN
+    IF (select ile from (select A.nazwa, count(skok.id) as ile from (select * from konkurs where id = new.id_konkursu) A join skok on A.id = skok.id_konkursu group by A.nazwa) B) > 0 THEN
+        RAISE EXCEPTION 'Ktoś już skoczył!';
+    ELSE RETURN NEW;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
+
+DROP TRIGGER IF EXISTS sprawdz_czy_ktos_skoczyl ON zgloszenie;
+
+CREATE TRIGGER ssprawdz_czy_ktos_skoczyl
+BEFORE INSERT ON zgloszenie
+FOR EACH ROW
+EXECUTE procedure sprawdz_czy_ktos_skoczyl();

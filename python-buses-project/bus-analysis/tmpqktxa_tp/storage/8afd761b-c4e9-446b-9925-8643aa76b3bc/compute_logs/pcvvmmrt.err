@@ -1,0 +1,19 @@
+[32m2024-02-08 14:55:14 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - LOGS_CAPTURED - Started capturing logs in process (pid: 156872).
+[32m2024-02-08 14:55:15 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - STEP_START - Started execution of step "analyze_bus_data".
+[32m2024-02-08 14:55:15 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - analyze_bus_data - Loading file from: ../data/fetch_buses_data using PickledObjectFilesystemIOManager...
+[32m2024-02-08 14:55:15 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - ASSET_OBSERVATION - ASSET_OBSERVATION for step analyze_bus_data
+[32m2024-02-08 14:55:15 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - LOADED_INPUT - Loaded input "fetch_buses_data" using input manager "base_io_manager"
+[32m2024-02-08 14:55:15 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - STEP_INPUT - Got input "fetch_buses_data" of type "Any". (Type check passed).
+[32m2024-02-08 14:55:21 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - analyze_bus_data -      Lines        Lon VehicleNumber  ...        Lat  Brigade     Speed
+0      213  21.102356          1000  ...  52.222819        1       NaN
+1668   213  21.102356          1000  ...  52.222819        1  0.000000
+3337   213  21.102350          1000  ...  52.222819        1  0.070063
+5006   213  21.102350          1000  ...  52.222819        1  0.000000
+1      219  21.187909          1001  ...  52.183974        1       NaN
+
+[5 rows x 7 columns]
+[32m2024-02-08 14:55:21 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2024-02-08 14:55:21 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - analyze_bus_data - Writing file at: ../data/analyze_bus_data using PickledObjectFilesystemIOManager...
+[32m2024-02-08 14:55:21 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - ASSET_MATERIALIZATION - Materialized value analyze_bus_data.
+[32m2024-02-08 14:55:21 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - HANDLED_OUTPUT - Handled output "result" using IO manager "base_io_manager"
+[32m2024-02-08 14:55:21 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8afd761b-c4e9-446b-9925-8643aa76b3bc - 156872 - analyze_bus_data - STEP_SUCCESS - Finished execution of step "analyze_bus_data" in 6.33s.

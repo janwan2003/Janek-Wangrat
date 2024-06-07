@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "janeklang",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#booleans"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.janeklang",
+					"match": "\\b(if|while|for|return|else|break|continue|ref)\\b"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "keyword.type.janeklang",
+					"match": "\\b(int|string|bool|void)\\b"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.janeklang",
+					"match": "//.*"
+				},
+				{
+					"name": "comment.block.janeklang",
+					"begin": "/\\*",
+					"end": "\\*/"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.janeklang",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.janeklang",
+					"match": "\\\\."
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.arithmetic.janeklang",
+					"match": "[+\\-*/%]"
+				},
+				{
+					"name": "keyword.operator.comparison.janeklang",
+					"match": "==|!=|<=|>=|<|>"
+				},
+				{
+					"name": "keyword.operator.logical.janeklang",
+					"match": "&&|\\|\\|"
+				}
+			]
+		},
+		"booleans": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.janeklang",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.janeklang"
+}

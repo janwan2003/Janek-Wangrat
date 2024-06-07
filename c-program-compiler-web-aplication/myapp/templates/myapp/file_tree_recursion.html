@@ -1,0 +1,26 @@
+<ul>
+    {% for catalog in catalogs %}
+        {% if catalog.is_deleted %}
+            <li class="folder" style="color:grey">{{ catalog.name }}
+        {% else %}
+            <li class="folder" style="color:black">{{ catalog.name }}
+        {% endif %}
+            {% if catalog.file_set.count %}
+                <ul>
+                {% for file in catalog.file_set.all %}
+                    {% if file.is_deleted %}
+                        <li class="file" style="color:grey" data-file-name="{{ file.name }}">{{ file.name }}</li>
+                    {% else %}
+                        <li class="file"><a href="#" class="file-link" data-file-name="{{ file.name }}">{{ file.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% if catalog.catalog_set.count %}
+                {% with catalogs=catalog.catalog_set.all %}
+                    {% include 'myapp/file_tree_recursion.html' %}
+                {% endwith %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

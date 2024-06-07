@@ -1,0 +1,7 @@
+int skibidi(bool t){
+    return skibidi(1);
+}
+
+int main(){
+    skibidi(true);
+}

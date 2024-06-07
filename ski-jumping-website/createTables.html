@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+        <title>
+           Strona na zadanie zaliczeniowe z baz danych
+        </title>
+    </head>
+ 
+    <body>
+          Stworzenie potrzebnych tabel<br><br>
+	  CREATE TABLE Zgloszenie(<br>
+	  data_zgloszenia DATE NOT NULL ,<br>
+	  id_zawodnika INTEGER NOT NULL REFERENCES Zawodnik<br>
+	  );<br>
+
+	  CREATE TABLE Zawodnik(<br>
+	  id INTEGER PRIMARY KEY,<br>
+	  imie VARCHAR(10) NOT NULL,<br>
+	  nazwisko VARCHAR(13) NOT NULL,<br>
+	  kraj VARCHAR(13) NOT NULL REFERENCES Firma<br>
+	  );<br>
+
+	CREATE TABLE Skok(<br>
+	id INTEGER PRIMARY KEY,<br>
+	dlugosc INTEGER NOT NULL,<br>
+	ocena INTEGER NOT NULL,<br>
+	seria INTEGER NOT NULL,<br>
+	id_zawodnika INTEGER NOT NULL REFERENCES Zawodnik<br>
+	);<br>
+
+	CREATE TABLE Kraj(<br>
+	nazwa VARCHAR(13) PRIMARY KEY,<br>
+	kwota_startowa INTEGER NOT NULL<br>
+	);<br>
+
+	CREATE TABLE Konkurs(<br>
+	nazwa VARCHAR(30) PRIMARY KEY,<br>
+	data_konkursu DATE NOT NULL,<br>
+	termin_zgloszen DATE NOT NULL<br>
+	);<br>
+
+
+    </body>
+</html>

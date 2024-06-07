@@ -1,0 +1,5 @@
+int main(){
+    bool b = true;
+    string s = b;
+    return 0;
+}

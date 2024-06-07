@@ -1,0 +1,9 @@
+[32m2024-02-08 15:57:50 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - 230233 - LOGS_CAPTURED - Started capturing logs in process (pid: 230233).
+[32m2024-02-08 15:57:50 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - 230233 - fetch_routes_data - STEP_START - Started execution of step "fetch_routes_data".
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - fetch_routes_data - Pobrano dane: Błędna metoda lub parametry wywołania
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - fetch_routes_data - Błędna metoda lub parametry wywołania
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - 230233 - fetch_routes_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - fetch_routes_data - Writing file at: ../data/fetch_routes_data using PickledObjectFilesystemIOManager...
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - 230233 - fetch_routes_data - ASSET_MATERIALIZATION - Materialized value fetch_routes_data.
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - 230233 - fetch_routes_data - HANDLED_OUTPUT - Handled output "result" using IO manager "base_io_manager"
+[32m2024-02-08 15:57:51 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a0d4122b-32fe-414e-87cd-511ccb3c422c - 230233 - fetch_routes_data - STEP_SUCCESS - Finished execution of step "fetch_routes_data" in 512ms.

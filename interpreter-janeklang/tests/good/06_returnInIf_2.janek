@@ -1,0 +1,11 @@
+int fun(int n) {
+    if(true){
+        return 0;
+    }
+}
+
+int main() {
+    int result = fun(0);
+    print(result);
+    return 0;
+}

@@ -1,0 +1,64 @@
+{% if asm_err %}
+    <h1>Error:</h1>
+    <p id="myP" onmousedown="highlightErrorLine({{row_number}})" onmouseup="resetErrorLine()">{{ asm_err }}</p>
+{% else %}
+    <p>No errors</p>
+{% endif %}
+
+{% if sections %}
+    <button onclick="toggleAllSections()" class="button">Toggle All Sections</button>
+{% endif %}
+
+{% for section in sections %}
+    <div>
+        <h3 onclick="toggleSectionContent(this)">{{ section.name }}</h3>
+        <pre class="{% cycle 'name' 'info' %} section" style="display: none;">{{ section.content }}</pre>
+    </div>
+    ;--------------------------------------------------------
+{% endfor %}
+
+<script>
+    function toggleAllSections() {
+        var sectionContents = document.querySelectorAll('.section');
+        var allHidden = true;
+        sectionContents.forEach(function(element) {
+            if (element.style.display !== 'none') {
+                allHidden = false;
+                return;
+            }
+        });
+        sectionContents.forEach(function(element) {
+            if (allHidden) {
+                element.style.display = 'block';
+            } else {
+                element.style.display = 'none';
+            }
+        });
+    }
+
+    function toggleSectionContent(element) {
+        var sectionContent = element.nextElementSibling;
+        if (sectionContent.style.display === 'none') {
+            sectionContent.style.display = 'block';
+        } else {
+            sectionContent.style.display = 'none';
+        }
+    }
+
+    function highlightErrorLine(rowNumber) {
+        codeEditor.addLineClass(rowNumber - 1, 'background', 'line-error');
+    }
+
+    // Reset the error line highlighting
+    function resetErrorLine() {
+        codeEditor.eachLine(function(line) {
+            codeEditor.removeLineClass(line, 'background', 'line-error');
+        });
+    }
+</script>
+
+<style>
+    .CodeMirror .line-error {
+        background-color: yellow; /* Change the background color to your desired color */
+    }
+</style>

@@ -1,0 +1,9 @@
+void skibidi(int a){
+    return;
+}
+
+int main(){
+    string s = "asd";
+    skibidi(s);
+    return 0;
+}

@@ -1,0 +1,39 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+<div class="grid-container">
+  <div class="files">
+   <a> Choose file: </a>
+   {% include 'myapp/file_tree.html' %}
+  </div>
+  <div class="text" id="file-text">{% include 'myapp/display_file.html' %} </div>
+  <div class="code">
+    {% include 'myapp/asm_code.html' %}
+  </div>
+  <div class="data">
+    {% include 'myapp/data.html' %}
+  </div>  
+</div>
+<script>
+  // get all the nav links and tabs
+  const navLinks = document.querySelectorAll('.nav a');
+  const tabs = document.querySelectorAll('.tab');
+
+  // add click event listener to each nav link
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault(); // prevent default link behavior
+      const tabId = link.getAttribute('href'); // get the tab id
+      const tab = document.querySelector(tabId); // get the corresponding tab
+      if (tab) {
+        // hide all tabs
+        tabs.forEach(tab => {
+          tab.classList.remove('active');
+        });
+        // show the selected tab
+        tab.classList.add('active');
+      }
+    });
+  });
+</script>
+{% endblock %}

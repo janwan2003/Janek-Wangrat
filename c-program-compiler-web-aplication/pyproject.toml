@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "c-program-compiler-web-aplication"
+version = "0.1.0"
+description = ""
+authors = ["Jan Wangrat <jan@wangrat.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.6"
+django-crispy-forms = "^2.1"
+crispy-bootstrap4 = "^2024.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

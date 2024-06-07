@@ -1,0 +1,22 @@
+[32m2024-02-08 14:09:18 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 018ca4a0-cf58-4e15-bdb0-b101e783ebf1 - 102823 - LOGS_CAPTURED - Started capturing logs in process (pid: 102823).
+[32m2024-02-08 14:09:18 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 018ca4a0-cf58-4e15-bdb0-b101e783ebf1 - 102823 - fetch_buses_data - STEP_START - Started execution of step "fetch_buses_data".
+[32m2024-02-08 14:09:19 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 018ca4a0-cf58-4e15-bdb0-b101e783ebf1 - 102823 - fetch_buses_data - STEP_FAILURE - Execution of step "fetch_buses_data" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "fetch_buses_data"::
+
+TypeError: byte indices must be integers or slices, not str
+
+Stack Trace:
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/home/janek/kurs_python/zadanie_zaliczeniowe/bus-analysis/bus_analysis/assets.py", line 12, in fetch_buses_data
+    return warsaw_api.request_loc_in_time(2)
+  File "/home/janek/kurs_python/zadanie_zaliczeniowe/bus-analysis/bus_analysis/resources.py", line 29, in request_loc_in_time
+    get_dagster_logger().info(response.content["result"])
+[0m

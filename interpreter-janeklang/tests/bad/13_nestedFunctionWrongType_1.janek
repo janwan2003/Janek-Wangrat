@@ -1,0 +1,12 @@
+int skibidi(){
+    return 420;
+}
+
+int main(){
+    string skibidi(){
+        return "420";
+    }
+    int a = 2137;
+    a = skibidi();
+    return 0;
+}

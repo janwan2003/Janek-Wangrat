@@ -1,0 +1,63 @@
+int main() {
+    10;
+    "string";
+    true;
+    int a = 10;
+    int b = 5;
+    int c = a + b;
+    print(c);
+    c = a - b;
+    print(c);
+    c = a * b;
+    print(c);
+    c = a / b;
+    print(c);
+    c = a % b;
+    print(c);
+    if (a > b) {
+        print("a is greater than b");
+    }
+    if (a < b) {
+        print("a is less than b");
+    } else {
+        print("a is not less than b");
+    }
+    if (a == 10) {
+        print("a is 10");
+    }
+    if (b != 10) {
+        print("b is not 10");
+    }
+    if (a >= b) {
+        print("a is greater than or equal to b");
+    }
+    if (b <= a) {
+        print("b is less than or equal to a");
+    }
+    if ((a + b) > (a - b)) {
+        print("a + b is greater than a - b");
+    }
+    if ((a > b) && (b > 0)) {
+        print("a is greater than b and b is positive");
+    }
+    if ((a < b) || (a > b)) {
+        print("a is either less than or greater than b");
+    }
+    bool d = true;
+    bool e = false;
+    if (d) {
+        print("d is true");
+    }
+    if (!e) {
+        print("e is false");
+    }
+    if (d && e) {
+        print("d and e are true");
+    } else {
+        print("d and e are not both true");
+    }
+    if (d || e) {
+        print("d or e is true");
+    }
+    return 0;
+}

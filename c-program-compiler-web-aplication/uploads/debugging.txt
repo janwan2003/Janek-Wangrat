@@ -1,0 +1,16 @@
+gdb *nazwa*
+q - wyjśćie
+run - uruchom program i zabij poprzednią instację
+start - wstaw brakepointa na pierwszą instrukcję miana
+next - przechodzi do następnej linii
+step - jeżeli zostanie wywołana procedura to do niej wchodzi, ale to samo co wyżej
+nexti / stepi - to samo ale używa instrukcji maszynowej
+pe *wyrażenie języka c* - wypisuje wartość wyrażeni, można używać dolar wartośc rejestru
+p/x - wypisuje 16-stkowo
+break *nazwa pliku : nr wiersza* - ustawia breakpointaw tym pliku na tym wierszu
+break *nazwa funkcji* - ustawia na pierwzej instrukcji danej funkcji
+tbreak - to samo, ale tymczasowo czyli wywołuje się raz i znika
+break *coś* if *wyrażenie* - zatrzyma breakpointa tylko jeżeli wyrażenie logiczne
+info registers - wypisuje wszystkie rejestry
+continue (c) - wznawia pracę programu
+layout src/asm - czysta przyjemność

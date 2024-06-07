@@ -1,0 +1,153 @@
+<form method="post" action="{% url 'myapp:compile' %}">
+    {% csrf_token %}
+    <ul class="nav">
+      <li><a href="#tab1">STANDARD</a></li>
+      <li><a href="#tab2">OPTIMIZATIONS</a></li>
+      <li><a href="#tab3">PROCESSOR</a></li>
+      <li><a href="#tab4">DEPENDENCIES</a></li>
+    </ul>
+    <div class="tab" id="tab1">
+      <div class = "tabOptions">
+      <label for="standard">Select a standard:</label><br>
+      <input type="radio" id="c89" name="standard" value="c89">
+      <label for="c89">c89</label><br>
+      <input type="radio" id="c99" name="standard" value="c99">
+      <label for="c99">c99</label><br>
+      <input type="radio" id="c11" name="standard" value="c11">
+      <label for="c11">c11</label><br>
+      </div>
+    </div>
+    <div class="tab" id="tab2">
+      <div class = "tabOptions">
+      <label for="optimizations">Select a set of optimizations:</label><br>
+      <input type="checkbox" id="opt-code-size" name="optimizations[]" value="opt-code-size">
+      <label for="opt-code-size">Code size</label><br>
+      <input type="checkbox" id="peep-asm" name="optimizations[]" value="peep-asm">
+      <label for="peep-asm">Peephole optimizer</label><br>
+      <input type="checkbox" id="fomit-frame-pointer" name="optimizations[]" value="fomit-frame-pointer">
+      <label for="fomit-frame-pointer">Ommit frame pointer</label><br>
+      </div>
+    </div>    
+    <div class="tab" id="tab3">
+      <div class = "tabOptions">
+      <label for="processor">Select a processor:</label><br>
+      <input type="radio" id="mcs51" name="processor" value="mcs51" onclick="showDependencies('mcs51')">
+      <label for="mcs51">MCS51</label><br>
+      <input type="radio" id="z80" name="processor" value="z80" onclick="showDependencies('z80')">
+      <label for="z80">Z80</label><br>
+      <input type="radio" id="stm8" name="processor" value="stm8" onclick="showDependencies('stm8')">
+      <label for="stm8">STM8</label><br>
+      </div>
+</div> 
+    <div class="tab" id="tab4">
+    <div id="mcs51_dependencies" style="display:none" class = "tabOptions">
+      <label for="dependencies">Choose a model of the program:</label><br>
+      <input type="radio" id="small" name="dependencies" value="model-small">
+      <label for="small">Small program model</label><br>
+      <input type="radio" id="medium" name="dependencies" value="model-medium">
+      <label for="medium">Medium program model</label><br>
+      <input type="radio" id="large" name="dependencies" value="model-large">
+      <label for="large">Large program model</label><br>
+      <input type="radio" id="huge" name="dependencies" value="model-huge">
+      <label for="huge">Huge program model</label><br>
+    </div>
+    <div id="z80_dependencies" style="display:none" class = "tabOptions">
+      <label for="dependencies">Define assembler name: </label><br>
+      <input type="radio" id="rgbds" name="dependencies" value="asm=rgbds">
+      <label for="rgbds">rgbds</label><br>
+      <input type="radio" id="isas" name="dependencies" value="asm=isas">
+      <label for="isas">isas</label><br>
+      <input type="radio" id="z80asm" name="dependencies" value="asm=z80asm">
+      <label for="z80asm">z80asm</label><br>
+    </div>    
+    <div id="stm8_dependencies" style="display:none" class = "tabOptions">
+      <label for="dependencies">Choose the model size: (available from standard C99)</label><br>
+      <input type="radio" id="medium" name="dependencies" value="model-medium">
+      <label for="medium">Medium model</label><br>
+      <input type="radio" id="large" name="dependencies" value="model-large">
+      <label for="large">Large model</label><br>
+    </div>    
+  </div>
+    <button type="submit" name="compile-button" class="button">Compile</button>
+  </form>
+  
+
+<script>
+  // Load the selected options from local storage
+document.addEventListener('DOMContentLoaded', function() {
+  var standard = localStorage.getItem('standard');
+  if (standard) {
+    document.querySelector('input[name="standard"][value="' + standard + '"]').checked = true;
+  }
+
+  var processor = localStorage.getItem('processor');
+  if (processor) {
+    document.querySelector('input[name="processor"][value="' + processor + '"]').checked = true;
+    showDependencies(processor);
+  }
+
+  var dependencies = localStorage.getItem('dependencies');
+  if (dependencies) {
+    document.querySelector('input[name="dependencies"][value="' + dependencies + '"]').checked = true;
+  }
+   
+  if (localStorage.getItem('optimizations[]')) {
+    const savedValues = JSON.parse(localStorage.getItem('optimizations[]'));
+    savedValues.forEach(value => {
+      const checkbox = document.querySelector(`[value="${value}"]`);
+      checkbox.checked = true;
+    });
+  }
+});
+
+// Save the selected options to local storage on form submit
+document.querySelectorAll('form').forEach(function(form) {
+  form.addEventListener('submit', function(event) {
+    localStorage.setItem('standard', document.querySelector('input[name="standard"]:checked').value);
+    localStorage.setItem('processor', document.querySelector('input[name="processor"]:checked').value);
+    localStorage.setItem('dependencies', document.querySelector('input[name="dependencies"]:checked').value);
+  });
+
+
+  // Save the selected option to local storage on radio button click
+form.querySelectorAll('input[type="radio"]').forEach(function(radio) {
+    radio.addEventListener('click', function(event) {
+      localStorage.setItem(event.target.name, event.target.value);
+    });
+  });
+});
+
+// Add event listener to each checkbox
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+  checkbox.addEventListener('change', () => {
+    // Get all checked checkboxes
+    const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    // Get an array of their values
+    const checkedValues = Array.from(checkedCheckboxes).map(checkbox => checkbox.value);
+    // Save the values to local storage
+    localStorage.setItem('optimizations[]', JSON.stringify(checkedValues));
+  });
+});
+
+function showDependencies(processor) {
+  var mcs51Deps = document.getElementById("mcs51_dependencies");
+  var z80Deps = document.getElementById("z80_dependencies");
+  var stm8Deps = document.getElementById("stm8_dependencies");
+if (processor == "mcs51") {
+  mcs51Deps.style.display = "block";
+  z80Deps.style.display = "none";
+  stm8Deps.style.display = "none";
+} else if (processor == "z80") {
+  mcs51Deps.style.display = "none";
+  z80Deps.style.display = "block";
+  stm8Deps.style.display = "none";
+} else if (processor == "stm8") {
+  mcs51Deps.style.display = "none";
+  z80Deps.style.display = "none";
+  stm8Deps.style.display = "block";
+}
+}
+  </script>
+  
+    
+

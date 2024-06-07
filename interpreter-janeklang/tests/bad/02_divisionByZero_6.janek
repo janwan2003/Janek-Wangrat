@@ -1,0 +1,4 @@
+int main(){
+    420 / 0;
+    return 0;
+}

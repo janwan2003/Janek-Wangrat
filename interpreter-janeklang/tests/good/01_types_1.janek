@@ -1,0 +1,9 @@
+int main(){
+    1;
+    "string";
+    true;
+    print(1);
+    print("string");
+    print(true);
+    return 0;
+}

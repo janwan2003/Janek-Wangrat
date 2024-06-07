@@ -1,0 +1,12 @@
+void outer() {
+    int x = 10;
+    void inner() {
+        print(x);
+    }
+    inner();
+}
+
+int main() {
+    outer();
+    return 0;
+}

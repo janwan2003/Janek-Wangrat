@@ -1,0 +1,9 @@
+int main(){
+    string s = "asd";
+    string d = "2137";
+    while(true){
+        int s = 123;
+        d = s;
+    }
+    return 0;
+}

@@ -1,0 +1,6 @@
+int main(){
+    if(3){
+        420;
+    }
+    return 0;
+}

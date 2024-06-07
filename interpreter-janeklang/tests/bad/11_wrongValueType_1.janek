@@ -1,0 +1,9 @@
+int skibidi(){
+    return 2137;
+}
+
+int main(){
+    string s = "asd";
+    s = skibidi();
+    return 0;
+}

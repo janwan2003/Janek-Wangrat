@@ -1,0 +1,9 @@
+[32m2024-02-08 15:23:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - 190154 - LOGS_CAPTURED - Started capturing logs in process (pid: 190154).
+[32m2024-02-08 15:23:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - 190154 - fetch_stops_data - STEP_START - Started execution of step "fetch_stops_data".
+[32m2024-02-08 15:23:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - fetch_stops_data - Pobrano dane: Błędna metoda lub parametry wywołania
+[32m2024-02-08 15:23:07 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - fetch_stops_data - Błędna metoda lub parametry wywołania
+[32m2024-02-08 15:23:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - 190154 - fetch_stops_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2024-02-08 15:23:07 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - fetch_stops_data - Writing file at: ../data/fetch_stops_data using PickledObjectFilesystemIOManager...
+[32m2024-02-08 15:23:08 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - 190154 - fetch_stops_data - ASSET_MATERIALIZATION - Materialized value fetch_stops_data.
+[32m2024-02-08 15:23:08 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - 190154 - fetch_stops_data - HANDLED_OUTPUT - Handled output "result" using IO manager "base_io_manager"
+[32m2024-02-08 15:23:08 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f8851a-89d2-483f-bd92-40ce3f0382a3 - 190154 - fetch_stops_data - STEP_SUCCESS - Finished execution of step "fetch_stops_data" in 574ms.

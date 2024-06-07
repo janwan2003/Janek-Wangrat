@@ -1,0 +1,18 @@
+15
+5
+50
+2
+0
+a is greater than b
+a is not less than b
+a is 10
+b is not 10
+a is greater than or equal to b
+b is less than or equal to a
+a + b is greater than a - b
+a is greater than b and b is positive
+a is either less than or greater than b
+d is true
+e is false
+d and e are not both true
+d or e is true

@@ -1,0 +1,81 @@
+<textarea id="code-editor" class="code-textarea">{{ displayed_file_text }}</textarea>
+<script>
+    let codeEditor;
+    document.addEventListener('DOMContentLoaded', () => {
+        codeEditor = CodeMirror.fromTextArea(document.getElementById('code-editor'), {
+            lineNumbers: true,
+            mode: 'text/x-csrc',
+            undoDepth: 0,
+        });
+        codeEditor.setSize('100%', '100%'); // Set the size of the CodeMirror instance to 100% of its container
+
+        codeEditor.on('change', function() {
+            var fileText = codeEditor.getValue();
+            codeEditor.setOption('undoDepth', 100);
+            // Get the CSRF token from the cookie
+            var csrftoken = getCookie('csrftoken');
+
+            $.ajax({
+                url: '{% url 'myapp:edit_file' %}',
+                method: 'POST',
+                data: {file_text: fileText},
+                headers: {'X-CSRFToken': csrftoken}, // Include the CSRF token in the headers
+                success: function(response) {
+                    console.log('File saved successfully.');
+                },
+                error: function() {
+                    console.log('Error occurred while saving the file.');
+                }
+            });
+            color();
+        });
+        color();
+    });
+
+    function color(){
+        var lines = codeEditor.lineCount(); // Total number of lines in the editor
+        let color = false;
+        for (var i = 0; i < lines; i++) {
+            var lineContent = codeEditor.getLine(i);
+            if (lineContent.includes("__asm__")) {
+                color = true;
+            }
+            if(color){
+                codeEditor.markText(
+                    { line: i, ch: 0 },
+                    { line: i+1, ch: 0 },
+                    { css: 'color: blue; background: grey' }
+                );
+            }
+            if(!color){
+                codeEditor.markText(
+                    { line: i, ch: 0 },
+                    { line: i+1, ch: 0 },
+                    { css: 'color: none; background: none' }
+                );
+            }
+            if(lineContent.includes(");")){
+                color = false;
+            }
+        }
+    }
+
+    // Function to get the CSRF cookie value
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+</script>
+
+  

@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/monokai.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/clike/clike.min.js"></script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'myapp/styles.css' %}">
+    </head>    
+     <body>
+          <div class="main-nav">
+               <ul>
+                {% if user.is_authenticated %}
+                 <li><a href="home">Welcome, {{user.username}}</a></li>
+                 <li><a href="logout">Logout</a></li>
+                 <li><a href="add_file">Add File</a></li>
+                 <li><a href="add_catalog">Add Catalog</a></li>
+                 <li><a href="delete_item">Delete</a></li>
+                 {% else %}
+                 <li><a href="login">Login</a></li>
+                 {% endif %}
+                 {% if asm_code %}
+                 <li><a href="download_asm">Download assembly code</a></li>
+                 {% endif %}
+               </ul>
+             </div>
+             {% block content %}
+             {% endblock %}
+             {% if messages %}
+                <ul class="messages">
+                  {% for message in messages %}
+                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+     </body>
+</html>

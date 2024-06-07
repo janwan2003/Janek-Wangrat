@@ -1,0 +1,9 @@
+[32m2024-02-08 15:44:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - 215209 - LOGS_CAPTURED - Started capturing logs in process (pid: 215209).
+[32m2024-02-08 15:44:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - 215209 - fetch_timetables_data - STEP_START - Started execution of step "fetch_timetables_data".
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - fetch_timetables_data - Pobrano dane: Błędna metoda lub parametry wywołania
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - fetch_timetables_data - Błędna metoda lub parametry wywołania
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - 215209 - fetch_timetables_data - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - fetch_timetables_data - Writing file at: ../data/fetch_timetables_data using PickledObjectFilesystemIOManager...
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - 215209 - fetch_timetables_data - ASSET_MATERIALIZATION - Materialized value fetch_timetables_data.
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - 215209 - fetch_timetables_data - HANDLED_OUTPUT - Handled output "result" using IO manager "base_io_manager"
+[32m2024-02-08 15:44:32 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - a1b73cab-7e67-4258-81d9-439f55aaec45 - 215209 - fetch_timetables_data - STEP_SUCCESS - Finished execution of step "fetch_timetables_data" in 616ms.

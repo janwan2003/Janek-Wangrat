@@ -1,0 +1,9 @@
+int plus(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = plus(3, 4);
+    print(result);
+    return 0;
+}

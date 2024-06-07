@@ -1,0 +1,20 @@
+<form method="post" action="{% url 'myapp:compile' %}">
+  {% csrf_token %}
+  <ul class="nav">
+    <li><a href="#tab2">OPTIMIZATIONS</a></li>
+  </ul>
+  <div class="tab" id="tab2">
+    <label for="optimizations">Select a set of optimizations:</label><br>
+    <input type="checkbox" id="set1" name="optimizations[]" value="set1">
+    <label for="set1">Set 1</label><br>
+    <input type="checkbox" id="set2" name="optimizations[]" value="set2">
+    <label for="set2">Set 2</label><br>
+    <input type="checkbox" id="set3" name="optimizations[]" value="set3">
+    <label for="set3">Set 3</label><br>
+  </div>    
+</div>
+  <button type="submit" name="compile-button" style="margin-top:20px" class="button">Compile</button>
+</form>
+
+  
+

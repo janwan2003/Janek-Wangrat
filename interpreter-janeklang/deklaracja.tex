@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{booktabs}
+
+\title{Deklaracja języka --- Janeklang}
+\author{Jan Wangrat}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Kilka słów}
+Moim językiem będzie zmodyfikowany Latte, tak więc składniowo jest to pewna mieszanka Javy i C++.
+Wprowadzam kilka marginalnych zmian, które są nieuniknione w celu spełnienia warunków 
+w tabelce cech, z tego samego powodu usuwam rzeczy, które uważam za niepotrzebne (w celu
+spełnienia własności z tabelki). Moim celem jest uzyskanie 27 punktów. 
+
+\section*{Dodane funkcjonalności}
+
+\begin{itemize}
+    \item \textbf{Definicje zmiennych na poziomie TopDef:} Możliwość definiowania zmiennych globalnych z inicjalizacją wartości na najwyższym poziomie struktury programu.
+    \item \textbf{Zagnieżdżone definicje funkcji:} Możliwość definiowania funkcji wewnątrz innych funkcji lub bloków kodu.
+    \item \textbf{Break i Continue} Dodanie do statementów breaka i continue
+\end{itemize}
+
+\section*{Usunięte funkcjonalności}
+
+\begin{itemize}
+  \item \textbf{Inkrementacja i Dekrementacja:} Usunięto operatory `++` i `--`.
+  \item \textbf{Usunięcie deklraracji:} Usunięcie delaracji, każda zmienna musi zostać zaiinicjalizowana.
+\end{itemize}
+
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    Funkcja                                                          & Zrealizowano \\ \midrule
+    01 (trzy typy)                                                   & +            \\
+    02 (literały, arytmetyka, porównania)                            & +            \\
+    03 (zmienne, przypisanie)                                        & +            \\
+    04 (print)                                                       & +            \\
+    05 (while, if)                                                   & +            \\
+    06 (funkcje lub procedury, rekurencja)                           & +            \\
+    07 (przez zmienną / przez wartość / in/out)                      & +            \\
+    08 (zmienne read-only i pętla for)                               &              \\
+    09 (przesłanianie i statyczne wiązanie)                          & +            \\
+    10 (obsługa błędów wykonania)                                    & +            \\
+    11 (funkcje zwracające wartość)                                  & +            \\
+    12 (4) (statyczne typowanie)                                     & +            \\
+    13 (2) (funkcje zagnieżdżone ze statycznym wiązaniem)            & +            \\
+    14 (1/2) (rekordy/listy/tablice/tablice wielowymiarowe)          &              \\
+    15 (2) (krotki z przypisaniem)                                   &              \\
+    16 (1) (break, continue)                                         & +            \\
+    17 (4) (funkcje wyższego rzędu, anonimowe, domknięcia)           &              \\
+    18 (3) (generatory)                                              &              \\ \bottomrule
+    \end{tabular}
+    \caption{Tabelka Cech, razem: 27 punktów}
+\end{table}
+    
+
+  
+\end{document}

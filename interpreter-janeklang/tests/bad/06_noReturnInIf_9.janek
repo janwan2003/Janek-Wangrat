@@ -1,0 +1,12 @@
+int skibidi(){
+    if(true){
+        "skibidi";
+    }
+    else{
+        return 0;
+    }
+}
+
+int main(){
+    skibidi();
+}

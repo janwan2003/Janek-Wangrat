@@ -1,0 +1,63 @@
+<ul>
+    {% for catalog in catalogs %}
+        {% if catalog.parent_catalog == NULL %}
+        {% if catalog.is_deleted %}
+            <li class="folder" style="color:grey">{{ catalog.name }}
+        {% else %}
+            <li class="folder" style="color:black">{{ catalog.name }}
+        {% endif %}
+            {% if catalog.file_set.count %}
+                <ul>
+                {% for file in catalog.file_set.all %}
+                    {% if file.is_deleted %}
+                       <li class="file" style="color:grey">{{ file.name }}</a></li>
+                    {% else %}
+                       <li class="file"><a href="#" class="file-link" data-file-name="{{ file.name }}">{{ file.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                </ul>
+            {% endif %}
+            {% if catalog.catalog_set.count %}
+                {% with catalogs=catalog.catalog_set.all %}
+                    {% include 'myapp/file_tree_recursion.html' %}
+                {% endwith %}
+            {% endif %}
+        </li>
+        {% endif %}
+    {% endfor %}
+    {% for file in files %}
+        {% if file.parent_catalog == NULL %}
+            {% if file.is_deleted %}
+                <li class="file" style="color:grey" data-file-name="{{ file.name }}">{{ file.name }}</li>
+            {% else %}
+                <li class="file"><a href="#" class="file-link" data-file-name="{{ file.name }}">{{ file.name }}</a></li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</ul>
+<div id="file-content"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.file-link').click(function(e) {
+            e.preventDefault(); // Prevent default link behavior
+
+            var fileName = $(this).data('file-name');
+
+            $.ajax({
+                url: '{% url 'myapp:display_file' %}',
+                method: 'GET',
+                data: {file_name: fileName},
+                success: function(response) {
+                    var fileText = response.message;
+                    codeEditor.getDoc().setValue(fileText);
+                },
+                error: function() {
+                    console.log('Error occurred while displaying the file.');
+                }
+            });            
+        });
+    });
+</script>

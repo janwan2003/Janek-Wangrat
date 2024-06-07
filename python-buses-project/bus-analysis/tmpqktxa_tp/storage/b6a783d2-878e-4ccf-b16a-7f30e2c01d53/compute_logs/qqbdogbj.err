@@ -1,0 +1,25 @@
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - 140620 - LOGS_CAPTURED - Started capturing logs in process (pid: 140620).
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - 140620 - analyze_bus_data - STEP_START - Started execution of step "analyze_bus_data".
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - analyze_bus_data - Loading file from: ../data/fetch_buses_data using PickledObjectFilesystemIOManager...
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - 140620 - analyze_bus_data - ASSET_OBSERVATION - ASSET_OBSERVATION for step analyze_bus_data
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - 140620 - analyze_bus_data - LOADED_INPUT - Loaded input "fetch_buses_data" using input manager "base_io_manager"
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - 140620 - analyze_bus_data - STEP_INPUT - Got input "fetch_buses_data" of type "Any". (Type check passed).
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mINFO[0m - __ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - analyze_bus_data - None
+[32m2024-02-08 14:41:31 +0100[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - b6a783d2-878e-4ccf-b16a-7f30e2c01d53 - 140620 - analyze_bus_data - STEP_FAILURE - Execution of step "analyze_bus_data" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "analyze_bus_data"::
+
+TypeError: 'NoneType' object does not support item assignment
+
+Stack Trace:
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_utils/__init__.py", line 467, in iterate_with_context
+    next_output = next(iterator)
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 131, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+  File "/home/janek/miniconda3/envs/bus-analysis/lib/python3.10/site-packages/dagster/_core/execution/plan/compute_generator.py", line 125, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+  File "/home/janek/kurs_python/zadanie_zaliczeniowe/bus-analysis/bus_analysis/assets.py", line 23, in analyze_bus_data
+    buses_data["Speed"] = np.nan
+[0m

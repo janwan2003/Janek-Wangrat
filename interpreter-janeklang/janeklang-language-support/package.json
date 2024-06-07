@@ -1,0 +1,35 @@
+{
+  "name": "janeklang-language-support",
+  "displayName": "janeklang-language-support",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "janeklang",
+        "aliases": [
+          "janeklang",
+          "janeklang"
+        ],
+        "extensions": [
+          ".janek",
+          ".janeklang"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "janeklang",
+        "scopeName": "source.janeklang",
+        "path": "./syntaxes/janeklang.tmLanguage.json"
+      }
+    ]
+  }
+}

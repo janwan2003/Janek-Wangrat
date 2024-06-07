@@ -1,0 +1,7 @@
+int skibidi(){
+    "hi :D";
+}
+
+int main(){
+    skibidi();
+}
