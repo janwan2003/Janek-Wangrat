@@ -12,18 +12,20 @@ uint64_t core(uint64_t n, char const *p);
 
 The parameter `n` is the core number. The parameter `p` is a pointer to an ASCIIZ string defining the computation, consisting of operations on a stack. The operations are interpreted as follows:
 
-+ : Pop two values, push their sum.
+- : Pop two values, push their sum.
+
 * : Pop two values, push their product.
+
 - : Negate the top value.
-0-9 : Push the corresponding value.
-n : Push the core number.
-B : Pop a value, use it as a two's complement offset to jump in the instruction string.
-C : Pop and discard the top value.
-D : Duplicate the top value.
-E : Swap the top two values.
-G : Push the result of `uint64_t get_value(uint64_t n)`.
-P : Pop a value and call `void put_value(uint64_t n, uint64_t w)`.
-S : Synchronize cores, swap the top values of the stacks of the current core and the core number popped from the stack.
+  0-9 : Push the corresponding value.
+  n : Push the core number.
+  B : Pop a value, use it as a two's complement offset to jump in the instruction string.
+  C : Pop and discard the top value.
+  D : Duplicate the top value.
+  E : Swap the top two values.
+  G : Push the result of `uint64_t get_value(uint64_t n)`.
+  P : Pop a value and call `void put_value(uint64_t n, uint64_t w)`.
+  S : Synchronize cores, swap the top values of the stacks of the current core and the core number popped from the stack.
 
 The result of the function `core` is the value at the top of the stack after computation.
 

@@ -1,6 +1,6 @@
 # Warsaw Public Transport Analysis
 
-This project utilizes the Dagster framework to analyze public transport data in Warsaw, including bus speeds, punctuality, and speed violations at various stops. 
+This project utilizes the Dagster framework to analyze public transport data in Warsaw, including bus speeds, punctuality, and speed violations at various stops.
 
 ## Why Dagster?
 
@@ -14,7 +14,6 @@ Dagster was chosen for this project for several reasons:
 
 4. **Type Checking and Error Handling**: Dagster's support for type checking at the pipeline level helps catch errors early in the development process, making pipelines more robust and easier to debug. Additionally, comprehensive error handling mechanisms ensure that any issues encountered during pipeline execution can be promptly addressed, minimizing downtime and data processing errors.
 
-
 ## Installation
 
 To set up and run this project, follow these steps:
@@ -25,7 +24,7 @@ To set up and run this project, follow these steps:
 
 3. **Install dependencies**: Go to bus-analysis and run pip install .[dev]
 
-4. **Export WARSAW_API_KEY to your env**: Run export WARSAW_API_KEY="*your_key*"
+4. **Export WARSAW_API_KEY to your env**: Run export WARSAW*API_KEY="\_your_key*"
 
 5. **Run dagster**: Run dagster dev
 
@@ -35,8 +34,8 @@ It is not recommended to run fetching assets data as it might take a lot of time
 
 Throughout the development of this project, several key decisions were made to ensure the robustness and accuracy of our data analysis pipeline. Here are some of the notable decisions:
 
-1. **Bus Speed Anomalies**: We determined that any instances of buses traveling at speeds over 100 km/h are to be considered anomalies. 
+1. **Bus Speed Anomalies**: We determined that any instances of buses traveling at speeds over 100 km/h are to be considered anomalies.
 
-2. **Speed Violations Measurement**: Speed violations are assessed for all buses based on proximity to the nearest stop. 
+2. **Speed Violations Measurement**: Speed violations are assessed for all buses based on proximity to the nearest stop.
 
 3. **Code Quality and Consistency**: To maintain high code quality and ensure consistency across the project, we utilized pylint and black for static code analysis and auto-formatting, respectively.

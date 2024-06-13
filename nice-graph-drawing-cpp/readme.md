@@ -10,7 +10,6 @@ This module is designed for drawing automata. It accepts input in the following 
 2 4 b
 ...
 
-
 ## Usage
 
 Example uses can be found in the `Examples` folder. For debugging purposes, it is recommended to set the `drawing` flag in `main.cpp`.
@@ -27,3 +26,4 @@ To run an example, use the following command:
 
 ```sh
 ./main < Examples/test<number_of_test>
+```
