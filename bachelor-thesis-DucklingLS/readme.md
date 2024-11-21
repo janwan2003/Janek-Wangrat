@@ -1,0 +1,2 @@
+# Language server for Duckling programming language
+ Duckling is a new programming language currently under development. It combines the speed of compiled languages with the ease of use of scripting languages. This thesis introduces a Language Server for Duckling, aiming to improve the development experience for programmers. It includes descriptions of the implementation of key features, such as code completion and diagnostics. Our solution uses the Language Server Protocol for wide IDE compatibility, with a focus on Visual Studio Code.

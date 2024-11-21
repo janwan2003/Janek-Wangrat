@@ -2,14 +2,15 @@
 
 ## Introduction
 
-Hello! I'm Jan Wangrat, a 21-year-old student pursuing dual Bachelor's degrees in Computer Science (2024) and Mathematics (2025) at the University of Warsaw. I'm also a Data Engineer and Software Developer at Neural Alpha, focusing on building an LLM powered platform with technologies like Python, Neo4j, MongoDB, LangChain, and S3.
+Hello! I'm Jan Wangrat, a 21-year-old student graduated in Computer Science (2024) and pursuing a degree in Mathematics (2025) at the University of Warsaw. I'm also a Data Engineer and Software Developer at Neural Alpha, focusing on building an LLM powered platform with technologies like Python, Neo4j, MongoDB, LangChain, and AWS.
 
 ## Projects Overview
 
-Here's a quick overview of some of the projects I've been working on (stars show how in my opinion interesting and complex the program in):
+Here's a quick overview of some of the projects I've been working on (stars show how in my opinion interesting and complex the program is):
 
-- **python-buses-project**: A bus network simulation. | _Python, Dagster_ | ★★★★★
-- **interpreter-janelang**: A custom programming language interpreter. | _Haskell, Programming Languages and Tools_ | ★★★★★ | III year
+- **bachelor-thesis-DucklingLS**: Researching a solution for language support for a new programming language. | _TypeScript, Bachelor Thesis_ | ★★★★★ | III year
+- **python-buses-project**: A bus network simulation. | _Python, Dagster_ | ★★★★★ | III year
+- **interpreter-janeklang**: A custom programming language interpreter. | _Haskell, Programming Languages and Tools_ | ★★★★★ | III year
 - **deep-neural-networks**: Tasks from a Deep Neural Networks course. | _Python, Neural Networks_ | ★★★★★ | III year
 - **executor**: A utility tool for task execution and management. | _C, Parallel programming_ | ★★★★☆ | II year
 - **internet-radio**: Building an internet radio system. | _Java, C++, Computer Networks_ | ★★★★☆ | II year
@@ -22,7 +23,7 @@ Here's a quick overview of some of the projects I've been working on (stars show
 - **inverting-permutation**: Algorithms to handle permutation operations. | _Assembly, Operating Systems_ | ★★☆☆☆ | II year
 - **prolog-program-verifier**: A Prolog-based verifier for logical programs. | _Prolog, Programming Languages and Tools_ | ★★☆☆☆ | III year
 - **skijumping-website**: A website for ski jumping event management. | _PHP, HTML, CSS, PostgreSQL, Databases_ | ★☆☆☆☆ | I year
-- **haskell-graph-and-set**: Functional programming to manipulate sets and graphs. | _Haskell, Programming Languages and Tools_ | ★☆☆☆☆ | I year
+- **haskell-graph-and-set**: Functional programming to manipulate sets and graphs. | _Haskell, Programming Languages and Tools_ | ★☆☆☆☆ | III year
 
 ## Technologies Used
 
