@@ -1,0 +1,2 @@
+# NMR Spectral Component Estimation using Unbalanced Optimal Transport via Mirror Descent Algorithm
+We propose a scalable method for NMR mixture analysis using unbalanced optimal transport with mirror descent and sparse transport plans. The approach improves memory efficiency while preserving the robustness of Wasserstein-based spectral comparison.
