@@ -8,6 +8,7 @@ Hello! I'm Jan Wangrat, a 21-year-old student graduated in Computer Science (202
 
 Here's a quick overview of some of the projects I've been working on (stars show how in my opinion interesting and complex the program is):
 
+- **bachelor-thesis-MirrorDescent**: Proposal of a scalable method for NMR mixture analysis using unbalanced optimal transport with mirror descent. | _TypeScript, Bachelor Thesis_ | ★★★★★ | III year
 - **bachelor-thesis-DucklingLS**: Researching a solution for language support for a new programming language. | _TypeScript, Bachelor Thesis_ | ★★★★★ | III year
 - **python-buses-project**: A bus network simulation. | _Python, Dagster_ | ★★★★★ | III year
 - **interpreter-janeklang**: A custom programming language interpreter. | _Haskell, Programming Languages and Tools_ | ★★★★★ | III year
