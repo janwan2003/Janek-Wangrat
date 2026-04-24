@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Hello! I'm Jan Wangrat, a 21-year-old student graduated in Computer Science (2024) and pursuing a degree in Mathematics (2025) at the University of Warsaw. I'm also a Data Engineer and Software Developer at Neural Alpha, focusing on building an LLM powered platform with technologies like Python, Neo4j, MongoDB, LangChain, and AWS.
+Hello! I'm Jan Wangrat, a 23-year-old student graduated in Computer Science (2024) and in Mathematics (2025) at the University of Warsaw. Currently I am pursuing a degree in Computer Science and Engineering in Politecnico di Milano (expected graduation in 2027). I'm also an AI Software Developer at Neural Alpha, focusing on building an LLM powered platform with technologies like Python, Neo4j, MongoDB, LangChain, and AWS.
 
 ## Projects Overview
 
