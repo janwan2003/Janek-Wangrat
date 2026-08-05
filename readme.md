@@ -79,6 +79,24 @@ Larger projects live in their own repositories.
 
 ---
 
+## Competitions
+
+| Year | Result | |
+| --- | --- | --- |
+| 2026 | **3rd of 68 teams** — [League of Robot Runners](https://www.leagueofrobotrunners.org) | International multi-agent path-finding competition sponsored by Amazon Robotics, co-hosted with AAMAS 2026. Entered as *Trzy Kwaterki*; combined score 7.034. |
+| 2025 | **21st in the final** — Midnight Code Competition, Serbia | |
+| 2025 | **1st place** — Hackarena 2.5, Warsaw | |
+| 2024 | **1st place** — Hackarena 2.0, Warsaw | |
+| 2024 | **3rd place** — AWS DeepRacer Challenge, University of Warsaw | |
+| 2024 | **3rd place** — Goldman Sachs Hackathon, Warsaw | Software engineering track. Code linked above. |
+| — | **Finalist** — Polish Olympiad in Mathematics | One of three **Andrzej Mąkowski Awards** for the best solution to a problem. |
+| — | **Finalist** — Polish Olympiad in Informatics | |
+
+Also selected for **First Ascent 2025**, Bending Spoons' invitation-only retreat for computer
+science students, and awarded the University of Warsaw **Dean's Scholarship** for 2021/22.
+
+---
+
 ## University of Warsaw coursework (2021–2024)
 
 Kept for the record — course assignments from the CS and Mathematics degrees, not current
