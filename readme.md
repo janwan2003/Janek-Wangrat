@@ -14,11 +14,38 @@ MSc Computer Science and Engineering at Politecnico di Milano (expected 2027).
 
 | | Role |
 | --- | --- |
-| **[Neural Alpha](https://neuralalpha.com)** | AI Software Developer — building an LLM-powered ESG intelligence platform on Python, Neo4j, MongoDB, LangChain and AWS |
+| **[Neural Alpha](https://neuralalpha.com)** | AI Software Developer — backend and data engineering |
 | **[TaxCompass](https://taxcompass.it)** | Founder (2026) |
 | **RewAIre** | Founder (2026) |
 
-Work done at Neural Alpha belongs to Neural Alpha and is not published here.
+### Neural Alpha
+
+[Neural Alpha](https://neuralalpha.com) does sustainability and corporate-performance analytics for
+investors and researchers. The premise is that an ESG score you can't audit is worthless: an analyst
+brings their own methodology — or picks up an off-the-shelf framework like ISSB, CSRD or TNFD — asks
+questions of a company's own filings, and gets back an answer with the source passage attached. Work
+that took analyst-weeks lands in hours, over a universe most teams can't afford to cover manually.
+
+Publicly stated scale: **1.8M** financial and sustainability disclosures across **200K** public and
+private companies, **2.6M** metrics and KPIs, **17M** news stories for controversy screening, and
+**250K** modelled financial and sustainability concepts. One published engagement assessed 1.4M
+disclosures for 7,000 companies against the TNFD recommendations.
+
+What I work with on the backend and data side:
+
+- **Python services** — FastAPI serving the platform, **Celery** + **Redis** for assessment runs that
+  outlive a request, **MongoDB** as the operational store (async and sync clients side by side)
+- **Dagster** pipelines on both halves of the system: building the entity graph and the exportable data
+  products, and running the online and offline AI work behind the app. Older **Kedro** pipelines are
+  still upstream of some of it
+- **A shared LangGraph agent library** consumed as a local dependency by both the API and the
+  pipelines — grounded document Q&A, chat, and document processing over retrieved disclosures, against
+  several model providers
+- **Neo4j** for the entity graph; **AWS**, **Terraform** and **Helm/Kubernetes** for deployment;
+  **Next.js** on the frontend; `uv` and `pnpm` across a Python + TypeScript monorepo
+
+Neural Alpha's code and data belong to Neural Alpha — none of it is published here, and nothing above
+goes past what the company states publicly plus the technologies involved.
 
 ---
 
