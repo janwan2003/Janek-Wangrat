@@ -16,7 +16,7 @@ MSc Computer Science and Engineering at Politecnico di Milano (expected 2027).
 | --- | --- |
 | **[Neural Alpha](https://neuralalpha.com)** | AI Software Developer — backend and data engineering |
 | **[TaxCompass](https://taxcompass.it)** | Founder (2026) |
-| **RewAIre** | Founder (2026) |
+| **RewAIre** | Founder (2026) — built with [ai71](https://ai71.ai) |
 
 ### Neural Alpha
 
@@ -65,7 +65,7 @@ Larger projects live in their own repositories.
 | Year | Project | What it is | Stack | Links |
 | --- | --- | --- | --- | --- |
 | 2026 | **TaxCompass** | AI tax co-pilot for foreign founders setting up a business in Italy. Multi-agent RAG over primary law (Normattiva, Agenzia delle Entrate, INPS) with inline citations, a deterministic multi-country tax engine, and a prerendered SEO marketing site. Shipped to production. | LangGraph, FastAPI, pgvector, Azure OpenAI, React, Terraform | [taxcompass.it](https://taxcompass.it) · repo private |
-| 2026 | **RewAIre** | Three-layer pipeline (Observe → Judge → Recommend) that turns workflow evidence into an AI-transformation blueprint, explorable as an interactive workflow graph. Run as a Politecnico di Milano capstone with three students owning one layer each, integrating over a shared Pydantic schema. | FastAPI, MongoDB/GridFS, Pydantic, React Flow | repo private |
+| 2026 | **RewAIre** | Three-layer pipeline (Observe → Judge → Recommend) that turns workflow evidence into an AI-transformation blueprint, explorable as an interactive workflow graph. Built with [ai71](https://ai71.ai), whose consulting methodology the Judge layer encodes, and run as a Politecnico di Milano capstone with three students owning one layer each over a shared Pydantic schema. | FastAPI, MongoDB/GridFS, Pydantic, React Flow | repo private |
 | 2025–26 | **Intelligent Job Management** | Scheduler for GPU deep-learning clusters: profiling-based placement, stoppable/resumable jobs, multi-node support. Modelled after Polimi's ANDREAS project. | Python, Docker, distributed systems | [repo](https://github.com/janwan2003/intelligent-job-management) |
 | 2025–26 | **Embedding Model Selection Platform** | Benchmark and pick embedding models against your own data, deployed on Azure. | TypeScript, Python, Azure | [repo](https://github.com/EmbedMatch/embedding-project-cloud) |
 | 2026 | **Exam Prep** | Study app over 51 past Polimi exams — spaced repetition, exam simulation, topic analytics — behind a Zod-validated content pipeline. | React, TypeScript, Vite, Azure | [live](https://ml-exam-prep-jw.azurewebsites.net) · repo private |
