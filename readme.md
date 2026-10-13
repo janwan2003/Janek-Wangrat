@@ -65,7 +65,7 @@ Larger projects live in their own repositories.
 | Year | Project | What it is | Stack | Links |
 | --- | --- | --- | --- | --- |
 | 2026 | **TaxCompass** | AI tax co-pilot for foreign founders setting up a business in Italy. Multi-agent RAG over primary law (Normattiva, Agenzia delle Entrate, INPS) with inline citations, a deterministic multi-country tax engine, and a prerendered SEO marketing site. Shipped to production. | LangGraph, FastAPI, pgvector, Azure OpenAI, React, Terraform | [taxcompass.it](https://taxcompass.it) · repo private |
-| 2026 | **RewAIre** | Three-layer pipeline (Observe → Judge → Recommend) that turns workflow evidence into an AI-transformation blueprint, explorable as an interactive workflow graph. Built with [ai71](https://ai71.ai), whose consulting methodology the Judge layer encodes, and run as a Politecnico di Milano capstone with three students owning one layer each over a shared Pydantic schema. | FastAPI, MongoDB/GridFS, Pydantic, React Flow | repo private |
+| 2026 | **RewAIre** | Three-layer pipeline (Observe → Judge → Recommend) that turns workflow evidence into an AI-transformation blueprint, explorable as an interactive workflow graph. Built with [ai71](https://ai71.ai). | FastAPI, MongoDB/GridFS, Pydantic, React Flow | repo private |
 | 2025–26 | **Intelligent Job Management** | Scheduler for GPU deep-learning clusters: profiling-based placement, stoppable/resumable jobs, multi-node support. Modelled after Polimi's ANDREAS project. | Python, Docker, distributed systems | [repo](https://github.com/janwan2003/intelligent-job-management) |
 | 2025–26 | **Embedding Model Selection Platform** | Benchmark and pick embedding models against your own data, deployed on Azure. | TypeScript, Python, Azure | [repo](https://github.com/EmbedMatch/embedding-project-cloud) |
 | 2026 | **LLM Calculation Benchmark** | 500 calculation problems with tool-verified ground truth (SymPy / `Fraction`), plus a pipeline that pulls real olympiad problems from published PDFs and an async evaluation notebook. Gemini 2.5 Flash scores 83.4% — and fails on applied multi-step problems, not on the ones labelled hard. | Python, SymPy, LangChain, MongoDB/JSON | [repo](https://github.com/janwan2003/llm-calculation-benchmark) |
@@ -81,17 +81,17 @@ Larger projects live in their own repositories.
 
 | Year | Result | |
 | --- | --- | --- |
-| 2026 | **3rd of 68 teams** — [League of Robot Runners](https://www.leagueofrobotrunners.org) | International multi-agent path-finding competition sponsored by Amazon Robotics, co-hosted with AAMAS 2026. Entered as *Trzy Kwaterki*; combined score 7.034. |
+| 2026 | **2nd of 68 teams** — [League of Robot Runners](https://www.leagueofrobotrunners.org) | International multi-agent path-finding competition sponsored by Amazon Robotics, co-hosted with AAMAS 2026. Entered as *Trzy Kwaterki*; combined score 7.034. |
 | 2025 | **21st in the final** — Midnight Code Competition, Serbia | |
 | 2025 | **1st place** — Hackarena 2.5, Warsaw | |
 | 2024 | **1st place** — Hackarena 2.0, Warsaw | |
 | 2024 | **3rd place** — AWS DeepRacer Challenge, University of Warsaw | |
 | 2024 | **3rd place** — Goldman Sachs Hackathon, Warsaw | Software engineering track. Code linked above. |
 | — | **Finalist** — Polish Olympiad in Mathematics | One of three **Andrzej Mąkowski Awards** for the best solution to a problem. |
-| — | **Finalist** — Polish Olympiad in Informatics | |
+| — | **Final** without the **Finalist** title — Polish Olympiad in Informatics | |
 
 Also selected for **First Ascent 2025**, Bending Spoons' invitation-only retreat for computer
-science students, and awarded the University of Warsaw **Dean's Scholarship** for 2021/22.
+science students.
 
 ---
 
