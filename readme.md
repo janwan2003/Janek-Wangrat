@@ -4,7 +4,9 @@ I build LLM-powered products end to end: retrieval and agent pipelines, the Fast
 services behind them, the React frontends on top, and the infra they run on.
 
 BSc Computer Science (2024) and BSc Mathematics (2025), University of Warsaw.
-MSc Computer Science and Engineering at Politecnico di Milano (expected 2027).
+MSc Computer Science and Engineering at Politecnico di Milano (expected 2027). Alongside the
+degree I run applied-AI projects with industry partners at
+[Polimi Data Scientists](#polimi-data-scientists-20252026).
 
 - **Email**: [jan@wangrat.com](mailto:jan@wangrat.com)
 - **LinkedIn**: [jan-wangrat](https://www.linkedin.com/in/jan-wangrat-b2b651236/)
@@ -15,8 +17,7 @@ MSc Computer Science and Engineering at Politecnico di Milano (expected 2027).
 | | Role |
 | --- | --- |
 | **[Neural Alpha](https://neuralalpha.com)** | AI Software Developer — backend and data engineering |
-| **[TaxCompass](https://taxcompass.it)** | Founder (2026) |
-| **RewAIre** | Founder (2026) — built with [ai71](https://ai71.ai) |
+| **[Polimi Data Scientists](https://www.polimidatascientists.it)** | Project manager (2026) — student association, AI projects with company partners |
 
 ### Neural Alpha
 
@@ -53,27 +54,82 @@ goes past what the company states publicly plus the technologies involved.
 
 | Year | Project | What it is | Stack |
 | --- | --- | --- | --- |
+| 2025–26 | [**Intelligent Job Management**](https://github.com/janwan2003/intelligent-job-management) — MSc research project, supervised by Prof. Danilo Ardagna | A scheduler for shared GPU deep-learning clusters, modelled after Polimi's ANDREAS project. It profiles each job on each GPU type, places jobs to meet their deadlines, and stops, migrates and resumes running jobs from checkpoints when a better plan appears. Runs on Polimi's own A40 and P600 nodes; components coordinate through PostgreSQL `LISTEN`/`NOTIFY`, with no message broker. | Python, FastAPI, PostgreSQL, Docker, React |
 | 2025 | [**Unbalanced Optimal Transport for NMR mixture analysis**](bachelor-thesis-MirrorDescent) — BSc Mathematics thesis | A scalable mirror-descent method for estimating spectral components of NMR mixtures via unbalanced optimal transport. Experiment code: [`janwan2003/wasserstein`](https://github.com/janwan2003/wasserstein) | Python, optimal transport |
 | 2024 | [**DucklingLS**](bachelor-thesis-DucklingLS) — BSc Computer Science thesis | Language-server support for a new programming language: LSP design, incremental analysis, editor integration | TypeScript, LSP |
 
 ---
 
+## Polimi Data Scientists (2025–2026)
+
+[Polimi Data Scientists](https://www.polimidatascientists.it) (PMDS) is a student-led association at
+Politecnico di Milano that runs data-science projects with company partners. Both of my projects
+there ended in a paper.
+
+### ChatDDT — project manager, with [AIDEA](https://aidea.team) (Feb–Jun 2026)
+
+AIDEA wanted delivery notes (*documenti di trasporto*, DDT) and invoices from many different
+suppliers turned into structured data, without maintaining a template per supplier. I managed the
+project for a three-person student team: planned the work and kept it in step with AIDEA, set up the
+repository, CI and issue workflow, and wrote the benchmark and the final report.
+
+- **15 extraction pipelines benchmarked head to head** — native vision–language models, local and
+  cloud OCR, layout parsers, table detection, hosted extractors — with the model, prompt and schema
+  held fixed, so only the document front-end varies.
+- **The answer for AIDEA:** the leading pipelines reach about 93% field accuracy at about a cent per
+  document, and sending the raw PDF straight to the model is statistically tied at under half the
+  cost. The remaining errors are mostly omissions, not hallucinations.
+- **Audit mode** — a FastAPI + React review app that shows, for every extracted field, where on the
+  page it came from.
+
+*Gemini, LlamaParse, Surya OCR, Google Document AI, Python, FastAPI, React*
+
+### Market Regime Detector — with [BlackSwan Quants](https://blackswanquants.com) (Nov 2025–Mar 2026)
+
+A nine-person team building a detector that tells calm, transitional and crisis regimes of the
+S&P 500 apart, as the input layer for an intraday momentum strategy. The final model is a Gaussian
+hidden Markov model (HMM). I built the dynamic-time-warping (DTW) hierarchical-clustering detector
+it is benchmarked against, and set up the repository's tooling.
+
+- **Result:** the HMM's high-volatility regime runs at about 2.3× the realised volatility of the calm
+  one, while the clustering baseline labels real drawdowns as low-risk periods.
+
+*Python, hmmlearn, DTW clustering, pandas* · [repo](https://github.com/blackswan-quants/marketregime_hmm)
+
+### Publications
+
+PDFs are in [`papers/`](papers).
+
+1. **J. Wangrat**, V. Caracuianu, S. Rajeev, F. Romeo. *Generalist Structured Extraction of Italian
+   Transport Documents and Invoices: A Controlled Benchmark of OCR, Layout-Parsing, and
+   Vision–Language Pipelines.* Technical report, Politecnico di Milano and AIDEA, 2026.
+   First and corresponding author. [PDF](papers/Wangrat_2026_Structured_Extraction_Italian_Transport_Documents.pdf)
+2. L. Pirozzi, G. Talà, S. Zani, M. Misimović, M. Puppo, E. Renzoni, V. Sironi, **J. Wangrat**,
+   M. Zappa. *A Comparative Study of Gaussian HMMs and DTW Hierarchical Clustering for S&P 500
+   Volatility Regime Identification.* SSRN preprint, April 2026.
+   [doi:10.2139/ssrn.6627619](https://doi.org/10.2139/ssrn.6627619)
+3. **J. Wangrat**. *Scheduling, Planning and Execution for Lifelong Multi-Agent Pickup and Delivery
+   in the League of Robot Runners 2026.* Draft, 2026.
+
+---
+
 ## Recent work (2025–2026)
 
-Larger projects live in their own repositories.
+Larger projects live in their own repositories. Ordered by how much work went into each.
 
 | Year | Project | What it is | Stack | Links |
 | --- | --- | --- | --- | --- |
-| 2026 | **TaxCompass** | AI tax co-pilot for foreign founders setting up a business in Italy. Multi-agent RAG over primary law (Normattiva, Agenzia delle Entrate, INPS) with inline citations, a deterministic multi-country tax engine, and a prerendered SEO marketing site. Shipped to production. | LangGraph, FastAPI, pgvector, Azure OpenAI, React, Terraform | [taxcompass.it](https://taxcompass.it) · repo private |
-| 2026 | **RewAIre** | Three-layer pipeline (Observe → Judge → Recommend) that turns workflow evidence into an AI-transformation blueprint, explorable as an interactive workflow graph. Built with [ai71](https://ai71.ai). | FastAPI, MongoDB/GridFS, Pydantic, React Flow | repo private |
-| 2025–26 | **Intelligent Job Management** | Scheduler for GPU deep-learning clusters: profiling-based placement, stoppable/resumable jobs, multi-node support. Modelled after Polimi's ANDREAS project. | Python, Docker, distributed systems | [repo](https://github.com/janwan2003/intelligent-job-management) |
-| 2025–26 | **Embedding Model Selection Platform** | Benchmark and pick embedding models against your own data, deployed on Azure. | TypeScript, Python, Azure | [repo](https://github.com/EmbedMatch/embedding-project-cloud) |
-| 2026 | **LLM Calculation Benchmark** | 500 calculation problems with tool-verified ground truth (SymPy / `Fraction`), plus a pipeline that pulls real olympiad problems from published PDFs and an async evaluation notebook. Gemini 2.5 Flash scores 83.4% — and fails on applied multi-step problems, not on the ones labelled hard. | Python, SymPy, LangChain, MongoDB/JSON | [repo](https://github.com/janwan2003/llm-calculation-benchmark) |
-| 2026 | **Sandbox Party** | Jackbox-style party game with an LLM game master: authoritative Colyseus server drives the phase machine and the model, a Godot 4.6 screen renders, and everyone plays from their phone over the LAN. | Node.js, Colyseus, Godot/GDScript, Gemini | [repo](https://github.com/janwan2003/sandbox-party) |
-| 2026 | **PokerChips** | Local-network poker chip manager: Android app with an embedded web server, no internet required. | Kotlin, Android | [repo](https://github.com/janwan2003/pokerchips) |
-| 2026 | **Exploding Kittens on your LAN** | Self-hosted card game for 2–10 players: authoritative Socket.IO server owns all hidden state, shared TypeScript types make a protocol break a compile error, 108 tests over the rules engine (Nope-on-Nope stacking included). | TypeScript, Socket.IO, React | [repo](https://github.com/janwan2003/exploding-kittens-lan) |
+| 2026 | **TaxCompass** | AI tax co-pilot for foreign founders opening a business in Italy, live in production. Every answer links to the law it rests on (Normattiva, Agenzia delle Entrate, INPS): multi-agent RAG with inline citations, a deterministic tax engine comparing Italy, Poland and Romania, user accounts with saved chats, and a prerendered SEO site. | LangGraph, FastAPI, pgvector, Azure OpenAI, React, Terraform | [taxcompass.it](https://taxcompass.it) · repo private |
+| 2026 | **Robot fleet planner — League of Robot Runners** | Task assignment and path planning for up to 10,000 warehouse robots, with one second of compute per round and tasks revealed online. Optimal Hungarian matching on smaller rounds, guide paths from traffic-flow optimisation (Frank–Wolfe), a tick-by-tick executor, and per-map tactics such as zoning and traffic lights at bottlenecks. Finished **2nd on all three tracks**. A GitHub Actions queue kept submitting entries unattended for three months. | C++, OpenMP, Python, GitHub Actions | repo private |
+| 2026 | **RewAIre** | Turns a company's workflow evidence — interview transcripts, emails, policies, system logs — into an AI-transformation blueprint through three LLM layers (Observe → Judge → Recommend), explorable as an interactive workflow graph. Three-student Polimi capstone built with [ai71](https://ai71.ai); I own the Judge layer, the app shell and the frontend. | FastAPI, MongoDB/GridFS, Pydantic, Claude, React Flow | repo private |
 | 2026 | **WeGoWhen** | Group trip date finder: everyone marks the days they're free, and a heat map plus ranked date ranges show when the whole group can go. No accounts — the shared link is the only credential. Prerendered, indexable pages in eight languages. In use by strangers since September 2026: 30+ trips and 100+ participants by October. | React, TypeScript, Cloudflare Pages Functions, D1 | [wegowhen.com](https://wegowhen.com) · repo private |
-| 2024 | **Goldman Sachs hackathon** | Calendar-integrated scheduling service built in 24h. | TypeScript, Python | [frontend](https://github.com/goldman-hackathon/goldman-front) · [backend](https://github.com/goldman-hackathon/goldman-back) |
+| 2025–26 | **Embedding Model Selection Platform** | Benchmarks embedding models on your own documents, so you choose by retrieval quality on your data rather than a public leaderboard. Team project, serverless on Azure. | FastAPI, React, Azure Functions, Cosmos DB, Azure OpenAI | [repo](https://github.com/EmbedMatch/embedding-project-cloud) |
+| 2026 | **prompt-debt** | Claude Code skill that reads your own session transcripts, measures how many prompts each task cost you, and turns the follow-ups you keep typing into skills and rules. Recurring mistakes are classified by three blind LLM readers, with their agreement measured. Standard library only, no network calls, 115 tests. | Python, Claude Code | repo private |
+| 2026 | **Exploding Kittens on your LAN** | Self-hosted card game for 2–10 players: authoritative Socket.IO server owns all hidden state, shared TypeScript types make a protocol break a compile error, 108 tests over the rules engine (Nope-on-Nope stacking included). | TypeScript, Socket.IO, React | [repo](https://github.com/janwan2003/exploding-kittens-lan) |
+| 2026 | **PokerChips** | Poker chips on phones: one Android phone hosts the game, everyone else scans a QR code and plays in the browser over local Wi-Fi. Every action is journaled on the host, so a crashed app or a dead phone resumes exactly where it stopped. | Kotlin, Android | [repo](https://github.com/janwan2003/pokerchips) |
+| 2026 | **Sandbox Party** | Jackbox-style party game with an LLM game master: authoritative Colyseus server drives the phase machine and the model, a Godot 4.6 screen renders, and everyone plays from their phone over the LAN. | Node.js, Colyseus, Godot/GDScript, Gemini | [repo](https://github.com/janwan2003/sandbox-party) |
+| 2026 | **LLM Calculation Benchmark** | 500 calculation problems with tool-verified ground truth (SymPy / `Fraction`), plus a pipeline that pulls real olympiad problems from published PDFs and an async evaluation notebook. Gemini 2.5 Flash scores 83.4% — and fails on applied multi-step problems, not on the ones labelled hard. | Python, SymPy, LangChain, MongoDB/JSON | [repo](https://github.com/janwan2003/llm-calculation-benchmark) |
+| 2024 | **Goldman Sachs hackathon** | Calendar-integrated scheduling service built in 24 hours; 3rd place. | TypeScript, Python | [frontend](https://github.com/goldman-hackathon/goldman-front) · [backend](https://github.com/goldman-hackathon/goldman-back) |
 
 ---
 
@@ -81,7 +137,7 @@ Larger projects live in their own repositories.
 
 | Year | Result | |
 | --- | --- | --- |
-| 2026 | **2nd of 68 teams** — [League of Robot Runners](https://www.leagueofrobotrunners.org) | International multi-agent path-finding competition sponsored by Amazon Robotics, co-hosted with AAMAS 2026. Entered as *Trzy Kwaterki*; combined score 7.034. |
+| 2026 | **2nd of 68 teams** — [League of Robot Runners](https://www.leagueofrobotrunners.org) | International multi-agent path-finding competition sponsored by Amazon Robotics, co-hosted with AAMAS 2026. Entered as *Trzy Kwaterki*; 2nd on all three tracks (Combined, Execution, Scheduling), combined score 7.034. Planner described above. |
 | 2025 | **21st in the final** — Midnight Code Competition, Serbia | |
 | 2025 | **1st place** — Hackarena 2.5, Warsaw | |
 | 2024 | **1st place** — Hackarena 2.0, Warsaw | |
@@ -130,7 +186,8 @@ work. Stars are my own take on how interesting each one is.
 **Languages** — Python, TypeScript, Java, C/C++, Haskell, Kotlin, SQL, Assembly
 
 **AI / data** — LangGraph, LangChain, RAG and hybrid retrieval, pgvector, Qdrant, Neo4j,
-PyTorch, Azure OpenAI, Anthropic API
+PyTorch, Azure OpenAI, Anthropic API, Gemini, document extraction (LlamaParse, Surya OCR,
+Document AI), hidden Markov models
 
 **Backend** — FastAPI, SQLAlchemy, Pydantic, MongoDB, PostgreSQL, MySQL, Django
 
