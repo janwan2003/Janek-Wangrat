@@ -10,6 +10,7 @@ degree I run applied-AI projects with industry partners at
 
 - **Email**: [jan@wangrat.com](mailto:jan@wangrat.com)
 - **LinkedIn**: [jan-wangrat](https://www.linkedin.com/in/jan-wangrat-b2b651236/)
+- **CV**: [Jan_Wangrat_CV.pdf](Jan_Wangrat_CV.pdf)
 - **Location**: Milan / Warsaw
 
 ## Where I work
@@ -109,7 +110,13 @@ PDFs are in [`papers/`](papers).
    Volatility Regime Identification.* SSRN preprint, April 2026.
    [doi:10.2139/ssrn.6627619](https://doi.org/10.2139/ssrn.6627619)
 3. **J. Wangrat**. *Scheduling, Planning and Execution for Lifelong Multi-Agent Pickup and Delivery
-   in the League of Robot Runners 2026.* Draft, 2026.
+   in the League of Robot Runners 2026.* Draft, 2026. [PDF](papers/Wangrat_2026_LoRR_Lifelong_MAPD_draft.pdf)
+4. M. Orżanowski, **J. Wangrat**. *NMR Spectral Component Estimation using Unbalanced Optimal Transport
+   via Mirror Descent Algorithm.* BSc thesis in Mathematics, University of Warsaw, 2025.
+   [PDF](bachelor-thesis-MirrorDescent/NMR_Spectral_Component_Estimation_using_Unbalanced_Optimal_Transport_via_Mirror_Descent_Algorithm.pdf)
+5. S. Dziuda, J. Kołaczyński, J. Szot, **J. Wangrat**. *Language Server for Duckling Programming Language.*
+   BSc thesis in Computer Science, University of Warsaw, 2024.
+   [PDF](bachelor-thesis-DucklingLS/Language%20server%20for%20Duckling%20programming%20language.pdf)
 
 ---
 
@@ -138,6 +145,7 @@ Larger projects live in their own repositories. Ordered by how much work went in
 | Year | Result | |
 | --- | --- | --- |
 | 2026 | **2nd of 68 teams** — [League of Robot Runners](https://www.leagueofrobotrunners.org) | International multi-agent path-finding competition sponsored by Amazon Robotics, co-hosted with AAMAS 2026. Entered as *Trzy Kwaterki*; 2nd on all three tracks (Combined, Execution, Scheduling), combined score 7.034. Planner described above. |
+| 2026 | **3rd place** — [Hackarena 3.0](https://hackarena.pl), Warsaw | |
 | 2025 | **21st in the final** — Midnight Code Competition, Serbia | |
 | 2025 | **1st place** — Hackarena 2.5, Warsaw | |
 | 2024 | **1st place** — Hackarena 2.0, Warsaw | |
